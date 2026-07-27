@@ -1,0 +1,415 @@
+/* Zomato Hyperpure Inspired Mindmap Flowchart & Dual Cards */
+
+.portals-section-hyperpure {
+  background-color: #EBF4F3;
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Flowchart Mindmap Layout with SVG Curved Connectors */
+.flowchart-container-hyperpure {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr;
+  align-items: center;
+  gap: 0;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto 5rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.flow-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Spacious lanes */
+  width: 100%;
+}
+
+.left-column {
+  align-items: flex-end;
+}
+
+.right-column {
+  align-items: flex-start;
+}
+
+.flow-lane {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.flow-lane.flex-reverse {
+  justify-content: flex-start;
+}
+
+/* Rounded Capsule Tags */
+.lane-capsule {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.tag-teal {
+  background-color: #E2FBF6;
+  color: var(--primary);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+}
+
+.tag-red {
+  background-color: #FFF1F2;
+  color: var(--secondary);
+  border: 1px solid rgba(225, 29, 72, 0.2);
+}
+
+/* Infinite Scrolling Marquee Track */
+.track-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-grow: 1; /* Stretch to fill available lane space */
+  max-width: 100%;
+  mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+
+.marquee-content {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Left-to-right travelling animation */
+.left-to-right {
+  animation: marqueeLTR 8s linear infinite;
+}
+
+.left-to-right.slow {
+  animation-duration: 12s;
+}
+
+.left-to-right.fast {
+  animation-duration: 5s;
+}
+
+@keyframes marqueeLTR {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee-logo {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm), 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: var(--transition-fast);
+  padding: 0.5rem; /* Center logo margin padding */
+}
+
+.marquee-logo:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+
+.marquee-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keep brand logo aspect ratios clean */
+  display: block;
+}
+
+.hp-svg-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.stroke-teal {
+  color: var(--primary);
+}
+
+.stroke-red {
+  color: var(--secondary);
+}
+
+/* Center SVG Connection Column */
+.center-flow-connector {
+  position: relative;
+  width: 100%;
+  height: 240px; /* Heights match lane dimensions */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-connector-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animated flow lines */
+.path-flow-in {
+  animation: flowIn 1.5s linear infinite;
+}
+
+.path-flow-out {
+  animation: flowOut 1.5s linear infinite;
+}
+
+@keyframes flowIn {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes flowOut {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+/* Center Marketplace Box Styles */
+.flow-center-box-hyperpure {
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.center-inner-box {
+  background: #FFFFFF;
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 1.5rem 2.25rem;
+  box-shadow: var(--shadow-xl), 0 10px 30px rgba(15, 118, 110, 0.12);
+  text-align: center;
+  min-width: 160px;
+}
+
+.center-inner-box h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.center-inner-box p {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+}
+
+.center-glow {
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.2) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Overlapping Dual Portal Cards (Replicating Screenshot Layout 100%) */
+.portals-flex-wrapper-hyperpure {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 900px; /* Centered, compact width */
+  margin: 0 auto;
+  position: relative;
+}
+
+.hp-portal-card {
+  position: relative;
+  padding: 4rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 250px;
+  justify-content: center;
+  text-align: left;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), z-index 0.1s ease;
+  overflow: hidden;
+}
+
+.hp-portal-card:hover {
+  transform: translateY(-8px) scale(1.02); /* Pop up / scale up on hover */
+  box-shadow: -15px 15px 40px rgba(0, 0, 0, 0.1), 15px 15px 35px rgba(0, 0, 0, 0.08);
+  z-index: 10 !important; /* Bring hovered card to the absolute foreground */
+}
+
+.hp-portal-card h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.hp-portal-card p {
+  font-size: 1rem;
+  margin-bottom: 2.25rem;
+  font-weight: 500;
+}
+
+/* Partner Card - White Theme (Left / Behind) */
+.partner-card-white {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1px solid var(--border-color);
+  color: var(--dark);
+  border-radius: 24px; /* Proper rounded corners on all sides */
+  z-index: 1;
+  padding-right: 4.5rem; /* Padding margin for overlap */
+  box-shadow: var(--shadow-sm);
+}
+
+.partner-card-white h2 {
+  color: var(--dark);
+}
+
+.partner-card-white p {
+  color: var(--text-muted);
+}
+
+/* Customer Card - Terracotta-Red Theme (Right / Overlap) */
+.customer-card-terracotta {
+  background-color: #BA5959; /* Exact rust terracotta red */
+  border-radius: 24px;
+  color: #FFFFFF;
+  margin-left: -2.5rem; /* Visual card overlap! */
+  z-index: 2;
+  /* Visual depth shadow over the left card */
+  box-shadow: -12px 12px 35px rgba(0, 0, 0, 0.08), 12px 12px 30px rgba(186, 89, 89, 0.15);
+}
+
+.customer-card-terracotta h2 {
+  color: #FFFFFF;
+}
+
+.customer-card-terracotta p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Slanted Black Badge */
+.hp-card-badge-black {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 850;
+  padding: 0.45rem 1rem;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  letter-spacing: 0.08em;
+}
+
+/* Pill buttons inside B2B cards (Screenshot style) */
+.hp-btn-white-pill {
+  font-size: 0.95rem;
+  font-weight: 750;
+  border-radius: 50px;
+  padding: 0.85rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.partner-card-white .hp-btn-white-pill {
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+.partner-card-white .hp-btn-white-pill:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.customer-card-terracotta .hp-btn-white-pill {
+  background-color: #FFFFFF;
+  border: 1px solid transparent;
+  color: #BA5959; /* Matching rust terracotta */
+}
+
+.customer-card-terracotta .hp-btn-white-pill:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.hp-btn-white-pill:active {
+  transform: translateY(0);
+}
+
+.btn-chevron-arrow {
+  width: 0.95rem;
+  height: 0.95rem;
+  stroke-width: 2.8px;
+}
+
+@media (max-width: 992px) {
+  .flowchart-container-hyperpure {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 1rem;
+  }
+  .left-column {
+    align-items: center;
+  }
+  .right-column {
+    align-items: center;
+  }
+  .flow-lane {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .center-flow-connector {
+    display: none; /* Hide connector lines on mobile/tablet to stack clean */
+  }
+  .portals-flex-wrapper-hyperpure {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .customer-card-terracotta {
+    margin-left: 0;
+  }
+  .partner-card-white {
+    border-radius: 24px;
+    padding-right: 3rem;
+  }
+}
