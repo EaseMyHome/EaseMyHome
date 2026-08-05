@@ -1,0 +1,92 @@
+# =========================================================================
+# EaseMyHome - Root .gitignore
+# =========================================================================
+
+# -------------------------------------------------------------------------
+# Node.js & Frontend (Vite / React)
+# -------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+**/dist-ssr/
+*.local
+.env*.local
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# -------------------------------------------------------------------------
+# Java / Spring Boot / Maven
+# -------------------------------------------------------------------------
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.rar
+
+# Uploaded media & user files
+backend/uploads/*
+!backend/uploads/.gitkeep
+mainbackend/uploads/*
+!mainbackend/uploads/.gitkeep
+
+# -------------------------------------------------------------------------
+# IDEs & Editor Configuration
+# -------------------------------------------------------------------------
+# Eclipse & STS
+.metadata/
+**/.metadata/
+.classpath
+**/.classpath
+.project
+**/.project
+.settings/
+**/.settings/
+.factorypath
+**/.factorypath
+
+# IntelliJ IDEA
+.idea/
+**/.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.code-workspace
+
+# NetBeans
+nbproject/
+build/
+nbbuild/
+nbdist/
+
+# -------------------------------------------------------------------------
+# Operating System & Archives
+# -------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+
+# Compressed archives
+*.7z
+*.zip
+*.tar.gz
+*.gz
+*.rar
