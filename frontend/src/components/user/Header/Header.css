@@ -1,0 +1,256 @@
+/* Zomato Hyperpure Styled Navbar */
+
+.navbar-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5.5rem;
+  gap: 1.5rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--dark);
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--primary);
+}
+
+.logo-text {
+  color: var(--dark);
+}
+
+.logo-text span {
+  color: var(--primary);
+}
+
+/* Location Picker with Tooltip */
+.location-picker-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.delivery-label {
+  font-size: 0.65rem;
+  color: var(--text-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.location-btn {
+  background: none;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0;
+  border-bottom: 1px dashed var(--text-muted);
+}
+
+.location-btn:hover {
+  color: var(--primary);
+}
+
+.chevron-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+/* Share location tooltip */
+.location-tooltip {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  background-color: #1E293B;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px);
+  transition: var(--transition-fast);
+  z-index: 1010;
+}
+
+.location-picker-wrapper:hover .location-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.location-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 160px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  z-index: 1010;
+  overflow: hidden;
+  animation: fadeInUp 0.15s ease-out;
+}
+
+.loc-item {
+  background: none;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transition-fast);
+}
+
+.loc-item:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.loc-item.active {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
+/* Nav Menu links */
+.navbar-menu-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.menu-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.menu-link:hover {
+  color: var(--primary);
+}
+
+/* Search Bar in Header */
+.header-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #F1F5F9;
+  border: 1px solid var(--border-color);
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  flex-grow: 1;
+  max-width: 320px;
+  gap: 0.5rem;
+}
+
+.header-search-bar:focus-within {
+  border-color: var(--primary);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.08);
+}
+
+.header-search-bar .search-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-light);
+}
+
+.header-search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 0.85rem;
+  color: var(--dark);
+}
+
+.header-search-bar input::placeholder {
+  color: var(--text-light);
+}
+
+/* Zomato crimson red login button */
+.login-btn-red {
+  background-color: var(--secondary) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.85rem !important;
+}
+
+.login-btn-red:hover {
+  background-color: var(--secondary-hover) !important;
+}
+
+@media (max-width: 992px) {
+  .navbar-menu-links {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-search-bar {
+    display: none;
+  }
+  .navbar-container {
+    height: 4.8rem;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 5.5rem;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 5.5rem);
+  background: #FFFFFF;
+  z-index: 999;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+  border-top: 1px solid var(--border-color);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    top: 4.8rem;
+    height: calc(100vh - 4.8rem);
+  }
+}

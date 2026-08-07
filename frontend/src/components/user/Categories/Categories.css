@@ -1,0 +1,98 @@
+/* Zomato Hyperpure Inspired Categories Grid */
+
+.services-sectionbg-white {
+  background-color: #FAFBFC;
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header-hyperpure {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hp-subtitle-red {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--secondary); /* Crimson Red like Hyperpure category label */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hyperpure-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hp-category-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  aspect-ratio: 1 / 1;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.hp-category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.hp-category-icon-box {
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: var(--transition-normal);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.hp-category-card:hover .hp-category-icon-box {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #E2FBF6 100%);
+  border-color: rgba(15, 118, 110, 0.2);
+  transform: scale(1.08) rotate(5deg); /* Playful rotate on hover */
+}
+
+.hp-emoji {
+  font-size: 2.3rem;
+  transition: var(--transition-fast);
+}
+
+.hp-category-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+@media (max-width: 992px) {
+  .hyperpure-categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hyperpure-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .hp-category-card {
+    padding: 1rem;
+  }
+}
