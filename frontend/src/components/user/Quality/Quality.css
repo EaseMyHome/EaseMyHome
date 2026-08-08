@@ -1,0 +1,233 @@
+/* Zomato Hyperpure Inspired Quality & Stats Styles */
+
+.quality-section-hyperpure {
+  background-color: #FCF5F0;
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Stats Bar */
+.stats-bar-hyperpure {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto 5rem;
+  background-color: #FFFFFF;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+}
+
+.stat-col-hyperpure {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.stat-val {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--secondary); /* Crimson red stats value like Image 1 */
+  line-height: 1.1;
+}
+
+.stat-lbl {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-top: 0.25rem;
+}
+
+.stat-divider {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: var(--border-color);
+}
+
+/* Quality Section Header */
+.quality-header-hyperpure {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.quality-header-hyperpure h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--secondary); /* Crimson red heading */
+  letter-spacing: -0.01em;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-top: 0.5rem;
+}
+
+/* Quality Split Layout */
+.quality-split-layout {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: 3rem;
+  max-width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Vertical Tab List */
+.quality-tabs-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 2px solid var(--border-color);
+  padding-left: 0;
+}
+
+.q-tab-btn {
+  background: none;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  transition: var(--transition-fast);
+  border-left: 2px solid transparent;
+  margin-left: -2px; /* Overlay on container border */
+}
+
+.q-tab-btn:hover {
+  color: var(--text-main);
+  background-color: #F8FAFC;
+}
+
+.q-tab-btn.active {
+  color: var(--dark);
+  border-left-color: var(--secondary); /* Red indicator line */
+  background-color: #FDF2F2;
+}
+
+.tab-bullet-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  transition: var(--transition-fast);
+}
+
+.q-tab-btn.active .tab-bullet-indicator {
+  background-color: var(--secondary);
+}
+
+/* Details Card on Right */
+.quality-details-card {
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 280px;
+}
+
+.q-details-content {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.q-details-content h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+}
+
+.q-details-content p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.q-details-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Red Pin Push aesthetic (from Image 1) */
+.pin-aesthetic {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(15deg);
+  font-size: 1.5rem;
+  z-index: 5;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.q-step-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .stats-bar-hyperpure {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .stat-col-hyperpure {
+    flex: 1 1 40%;
+  }
+  .stat-divider {
+    display: none;
+  }
+  .quality-split-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .quality-tabs-menu {
+    border-left: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .q-tab-btn {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1rem;
+    margin-left: 0;
+  }
+  .q-tab-btn.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--secondary);
+  }
+  .quality-details-card {
+    grid-template-columns: 1fr;
+  }
+  .q-details-image-wrapper {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-col-hyperpure {
+    flex: 1 1 100%;
+  }
+}
